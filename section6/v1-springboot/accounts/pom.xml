@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <artifactId>accounts</artifactId>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <annotationProcessorPaths>
+            <path>
+              <artifactId>lombok</artifactId>
+              <groupId>org.projectlombok</groupId>
+            </path>
+          </annotationProcessorPaths>
+        </configuration>
+        <groupId>org.apache.maven.plugins</groupId>
+      </plugin>
+      <plugin>
+        <artifactId>jib-maven-plugin</artifactId>
+        <configuration>
+          <to>
+            <image>baldevsinh/${project.artifactId}:s6</image>
+          </to>
+        </configuration>
+        <groupId>com.google.cloud.tools</groupId>
+        <version>3.5.1</version>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+    <!-- Web -->
+    <dependency>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <groupId>org.springframework.boot</groupId>  <!-- was: spring-boot-starter-webmvc (wrong) -->
+    </dependency>
+
+    <!-- JPA -->
+    <dependency>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+      <groupId>org.springframework.boot</groupId>
+    </dependency>
+
+    <!-- Validation -->
+    <dependency>
+      <artifactId>spring-boot-starter-validation</artifactId>
+      <groupId>org.springframework.boot</groupId>
+    </dependency>
+
+    <!-- Actuator -->
+    <dependency>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+      <groupId>org.springframework.boot</groupId>
+    </dependency>
+
+    <!-- H2 Database -->
+    <dependency>
+      <artifactId>h2</artifactId>
+      <groupId>com.h2database</groupId>
+      <scope>runtime</scope>
+    </dependency>
+
+    <!-- DevTools -->
+    <dependency>
+      <artifactId>spring-boot-devtools</artifactId>
+      <groupId>org.springframework.boot</groupId>
+      <optional>true</optional>
+      <scope>runtime</scope>
+    </dependency>
+
+    <!-- Lombok -->
+    <dependency>
+      <artifactId>lombok</artifactId>
+      <groupId>org.projectlombok</groupId>
+      <optional>true</optional>
+    </dependency>
+
+    <!-- Swagger/OpenAPI — use 3.x for Spring Boot 4.x -->
+    <dependency>
+      <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+      <groupId>org.springdoc</groupId>
+      <version>3.0.1</version>
+    </dependency>
+
+    <!-- Testing — single correct artifact -->
+    <dependency>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <groupId>org.springframework.boot</groupId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <description>Microservice for Accounts</description>
+  <groupId>com.eazybytes</groupId>
+  <modelVersion>4.0.0</modelVersion>
+  <name>accounts</name>
+
+  <packaging>jar</packaging>
+
+  <parent>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <groupId>org.springframework.boot</groupId>
+    <relativePath/>
+    <version>4.0.6</version>
+  </parent>
+
+  <properties>
+    <java.version>21</java.version>
+  </properties>
+  <version>0.0.1-SNAPSHOT</version>
+</project>

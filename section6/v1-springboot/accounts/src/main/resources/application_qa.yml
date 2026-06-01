@@ -1,0 +1,16 @@
+spring:
+  config:
+    activate:
+      on-profile: "qa"
+
+build:
+  version: "2.0"
+
+accounts:
+  message: "Welcome to EazyBank accounts related QA APIs"
+  contactDetails:
+    name: "Alister Smith - Test Manager"
+    email: "alister@gmail.com"
+  onCallSupport:
+    - (555)267-7834
+    - (555)655-1985
