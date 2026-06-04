@@ -79,6 +79,12 @@
       <artifactId>spring-cloud-starter-config</artifactId>
     </dependency>
 
+    <!-- bus amqp -->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+    </dependency>
+
     <!-- Swagger/OpenAPI -->
     <dependency>
       <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
